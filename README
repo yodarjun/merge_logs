@@ -1,10 +1,8 @@
 Usage: merge_logs [options]
--v, --verbose                                    Get verbose output.
--s, --source SOURCE                       Specify a file that contains paths of all log files
-                                                        to be merged.
--d, --destination DESTINATION         Specify the full path of the destination file.
--l, --logs LOGS                                  Specify paths of all logs to be merged in a
-                                                        comma separated format.
+| -v | --verbose                 | Get verbose output                                                 |
+| -s | --source SOURCE           | Specify a file that contains paths of all log files to be merged   |
+| -d | --destination DESTINATION | Specify the full path of the destination file                      |
+| -l | --logs LOGS               | Specify paths of all logs to be merged in a comma separated format |
 
 This is for those of us who still have distributed logging. I worked in an environment where this was the case and so I wrote this script to merge the logs in a chronological order so that I could follow the flow of some actions when the load balancer decided to kick in.
 
