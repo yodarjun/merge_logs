@@ -1,0 +1,17 @@
+Usage: merge_logs [options]
+-v, --verbose                                    Get verbose output.
+-s, --source SOURCE                       Specify a file that contains paths of all log files
+                                                        to be merged.
+-d, --destination DESTINATION         Specify the full path of the destination file.
+-l, --logs LOGS                                  Specify paths of all logs to be merged in a
+                                                        comma separated format.
+
+This is for those of us who still have distributed logging. I worked in an environment where this was the case and so I wrote this script to merge the logs in a chronological order so that I could follow the flow of some actions when the load balancer decided to kick in.
+
+eg: 
+ - pull the log files from all of your servers into one folder, say /home/mobile_freak/logs/
+ - say for the sake of this example my log files from each server are named log1~5
+ - have a file in that folder, call it sources, which contains the exact paths to all of the log files in separate lines.
+ - The command would be:
+
+$> ruby merge_logs -s /home/mobile_freak/logs/sources -d /home/mobile_freak/logs/merged_logs
